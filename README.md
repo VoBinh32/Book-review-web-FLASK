@@ -9,10 +9,10 @@ This is my solution to CS50W Project 1.
 ## App Screenshots
 
 ![Login Page](https://github.com/VoBinh32/Book-review-web-FLASK/blob/main/static/project1.PNG)
-![Login Page]()
-![Login Page]()
-![Login Page]()
-![Login Page]()
+![Login Page](https://github.com/VoBinh32/Book-review-web-FLASK/blob/main/static/Capture.PNG)
+![Login Page](https://github.com/VoBinh32/Book-review-web-FLASK/blob/main/static/Capture1.PNG)
+![Login Page](https://github.com/VoBinh32/Book-review-web-FLASK/blob/main/static/Capture2.PNG)
+![Login Page](https://github.com/VoBinh32/Book-review-web-FLASK/blob/main/static/Capture3.PNG)
 
 ## Usage
 
@@ -26,9 +26,8 @@ This is my solution to CS50W Project 1.
 
 ```
 # Clone repo
-$ git clone
+$ git clone https://github.com/VoBinh32/Book-review-web-FLASK.git
 
-$ cd cs50-project1
 
 # Install all dependencies
 $ pip install -r requirements.txt
@@ -42,6 +41,7 @@ $ set GOODREADS_KEY = Your Goodreads Developer API Key # See: https://www.goodre
 To run the application execute the command:
 $ flask run
 The flask application should now be running on http://127.0.0.1:5000/
+```
 
 ## Architecture and Design
 
@@ -49,4 +49,7 @@ This application uses [Flask](https://flask.palletsprojects.com/en/1.1.x/), a Py
 
 1. Goodreads API
 2. PostgreSQL database hosted on [Heroku](https://www.heroku.com/)
+
+```
+
 ```
