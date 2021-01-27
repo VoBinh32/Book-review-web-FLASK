@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{info[0]['title']}}
+{% endblock %}
+
+{% block main %}
+<div class="row book-container">
+    <div class="col-sm-4">
+        <img src="http://covers.openlibrary.org/b/isbn/{{info[0]['isbn']}}-L.jpg" width="130px">
+    </div>
+    <div class="col-sm-4">
+        <h2 style="color:#537fbe">{{info[0]['title']}}</h2>
+        <h4>By: {{info[0]['author']}}</h4>
+        <h6>Published Year: {{info[0]['year']}}</h6>
+        <h6>ISBN: {{info[0]['isbn']}}</h6>
+        <h6>Number of Ratings: {{info[1]['work_ratings_count']}}</h6>
+        <h6>Average Rating: {{info[1]['average_rating']}}</h6>
+    </div>
+</div>
+<div>
+    <br>
+    <!-- REVIEW FORM -->
+    <form method="POST" class="form-border">
+        <div class="form-row">
+            <div class="form-group col-sm-12">
+                <label for="stars">Rating</label>
+                <select id="stars" name="stars" class="form-control" required>
+                    <option disabled selected value>stars</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-11">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Review for this book:</span>
+                    </div>
+                    <textarea name="review" id="review" class="form-control" rows="1" required></textarea>
+                </div>
+            </div>
+            <div class="form-group col-sm">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <div>
+        <h5 style="color:#537fbe">COMMUNITY REVIEWS</h5>
+        {% for review in reviews %}
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid" />
+                        </div>
+                        <div class="col-md-10">
+                            <p>
+                                <strong>{{review['username']}}:</strong>
+                            </p>
+                            <div class="clearfix"></div>
+                            <p>{{review['review']}}</p>
+                            <p>
+                                <a class="float-right btn text-white btn-danger">Rated: {{review['stars']}} stars</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

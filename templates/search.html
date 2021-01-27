@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block main %}
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Published Year</th>
+            <th scope="col">ISBN number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>
+                <a href="/book/{{book['isbn']}}">{{ book['title'] }}</a>
+            <td>{{ book['author'] }}</td>
+            <td>{{ book['year'] }}</td>
+            <td>{{ book['isbn'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

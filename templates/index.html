@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<h1>Search a book</h1>
+<form action="/search" method="GET">
+    <div class="form-group">
+        <input type="text" class="form-control" name="book" placeholder="Title, Author or ISBN">
+    </div>
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+{% endblock %}
